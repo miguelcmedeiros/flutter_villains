@@ -371,6 +371,13 @@ class VillainTransitionObserver extends NavigatorObserver {
     assert(route != null);
     _prepareVillainTransition(route, previousRoute);
   }
+  
+  @override
+  void didReplace({Route newRoute, Route oldRoute}) {
+    assert(navigator != null);
+    assert(newRoute != null);
+    _prepareVillainTransition(oldRoute, newRoute);
+  }
 
   @override
   void didStartUserGesture() {
